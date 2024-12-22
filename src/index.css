@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,500;1,500&family=Roboto+Mono:ital,wght@0,500;1,500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,118 +9,103 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto Mono", sans-serif;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: #020617;
+    color: #fff;
+}
+
+.gradient {
+    background-image: linear-gradient(to top left, var(--tw-gradient-stops));
+    --tw-gradient-from: #9e56e5 var(--tw-gradient-from-position);
+    --tw-gradient-from-position: 35%;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+    --tw-gradient-to: #7f1ddb var(--tw-gradient-to-position);
+    --tw-gradient-to-position: 65%;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
 }
 
 
-/* Breakpoints */
+/* text scroll */
 
-
-/* For small devices */
-
-@media screen and (max-width: 420px) {
-    .product {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
+@keyframes blink {
+    0% {
+        opacity: 1;
     }
-    .box_bottom {
-        gap: 10px;
+    50% {
+        opacity: 0;
     }
-    .btn_text {
-        font-size: 10px;
-        line-height: 10px;
-        padding-left: 6px;
-        padding-right: 6px;
-    }
-    .cart_direction {
-        flex-direction: column;
-    }
-    .cart {
-        padding: 1rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-    .one_cart {
-        flex-direction: column;
-        padding: 0.75rem;
+    100% {
+        opacity: 1;
     }
 }
 
-
-/* For medium devices */
-
-@media screen and (min-width: 421px) {
-    .product {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-    .box_bottom {
-        gap: 20px;
-    }
-    .btn_text {
-        font-size: 10px;
-        line-height: 10px;
-        padding-left: 8px;
-        padding-right: 8px;
-    }
-    .cart_direction {
-        flex-direction: column;
-    }
+.blinking {
+    animation: blink 2.5s infinite;
+    /* Blinking every 1.5 seconds */
 }
 
-@media screen and (min-width: 720px) {
-    .product {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-    .box_bottom {
-        gap: 20px;
-    }
-    .btn_text {
-        font-size: 10px;
-        line-height: 12px;
-    }
-    .cart_item {
-        width: 60%;
-    }
-    .summary {
-        width: 40%;
-    }
-    .cart_direction {
-        flex-direction: row;
-    }
-    .one_cart {
-        flex-direction: row;
-        padding: 0.75rem;
-    }
-    .cart_description {
-        margin-left: 2.5rem;
-        width: 70%;
-    }
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Full viewport height */
+    text-align: center;
 }
 
 
-/* For Large Devices */
+/* Slide Effects */
 
-@media screen and (min-width: 1023px) {
-    .product {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-25%);
+        /* Start from above the screen */
     }
-    .box_bottom {
-        gap: 25px;
-    }
-    .cart_item {
-        width: 60%;
-    }
-    .summary {
-        width: 40%;
+    100% {
+        transform: translateY(0);
+        /* End at the normal position */
     }
 }
 
-@media screen and (min-width: 1152px) {
-    .product {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-    .box_bottom {
-        gap: 40px;
-    }
+.slide-top {
+    animation: slideInFromTop 0.5s ease-out;
+    /* Apply slide-in animation */
+}
+
+
+/* Global Scrollbar Styling */
+
+::-webkit-scrollbar {
+    width: 15px;
+    /* Width of the scrollbar */
+    height: 15px;
+    /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #9333ea, #9c2add);
+    /* Thumb color */
+    border-radius: 8px;
+    /* Rounded corners */
+    border: 2px solid #1f1f1f;
+    /* Space between thumb and track */
+}
+
+ ::-webkit-scrollbar-track {
+    background: #334155;
+    /* Track color */
+    border-radius: 8px;
+    /* Rounded corners */
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #a533f2, #9373ea);
+    /* Thumb hover color */
+}
+
+ ::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(45deg, #631ae8, #9336da);
+    /* Thumb active color */
 }

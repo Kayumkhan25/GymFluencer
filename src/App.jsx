@@ -1,21 +1,39 @@
-import { Routes } from "react-router-dom";
-import Navbar from "./components/Navbar"
-import { Route } from "react-router-dom";
-import Home from "./pages/Home"
-import Cart from "./pages/Cart"
+import React from 'react';
+import Navbar from './components/Navbar';
+import TopIntro from './components/TopIntro';
+import Scrolling from './components/Scrolling';
+import Stats from './components/Stats';
+import Services from './components/Services';
+import Benifits from './components/Benifits';
+import Personalized from './components/Personalized';
+import Transformation from './components/Transformation';
+import Location from './components/Location';
+import FAQ from './components/FAQ';
+import Footer from './components/Footer';
+import Blogs from './components/Blogs';
+import Says from './components/Says';
+
 
 const App = () => {
+  
+  
   return (
-  <div>
-    <div className="bg-slate-800">
-      <Navbar /> 
+    <div className='grid gap-16'>
+      <Navbar />
+      <TopIntro />
+      <Scrolling />
+      <Stats/>
+      <Services />
+      <Benifits />
+      <Personalized />
+      <Transformation />
+      <Says />
+      <Location />
+      <Blogs />
+      <FAQ />
+      <Footer />
     </div>
-    <Routes>
-      <Route path="/" element={<Home/>} />
-      <Route path="/cart" element={<Cart/>} />
-    </Routes>     
-  </div>
   )
-};
+}
 
-export default App;
+export default App
