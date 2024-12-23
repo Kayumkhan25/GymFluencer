@@ -5,11 +5,10 @@ import gym2 from '../assets/images/gym2.jpg';
 import gym9 from '../assets/images/gym9.png';
 import gym10 from '../assets/images/gym10.png';
 import gym11 from '../assets/images/gym11.png';
-import gym12 from '../assets/images/gym12.png';
 
 const TopIntro = () => {
   return (
-    <section className='' id='home'>
+    <section className='mt-5' id='home'>
       <div className='relative flex flex-col gap-10 min-h-screen items-center justify-center'>
         <motion.div 
           initial={{ opacity: 0, scale: 0 }}
@@ -18,13 +17,12 @@ const TopIntro = () => {
           className='absolute inset-0 z-10 w-full sm:w-3/4 px-5 md:px-20 lg:px-[7.5rem] flex flex-col justify-center gap-10'>
           
           {/* Trusted by Section */}
-          <div className='px-4 py-[6px] text-sm sm:text-lg rounded-full border border-slate-500 shadow-sm shadow-slate-700 max-w-fit flex items-center justify-center gap-4 md:gap-8'>
-            <div className='w-12 h-12 sm:w-14 sm:h-14 flex relative'>
+          <div className='px-4 py-1 text-sm sm:text-lg rounded-full border border-slate-500 shadow-sm shadow-slate-700 max-w-fit mx-auto sm:mx-0 flex items-center justify-center gap-12 md:gap-16'>
+            <div className='w-12 h-12 sm:w-14 sm:h-14 flex relative items-center'>
               {/* Overlapping Images */}
               <img src={gym11} alt="gym11" className='rounded-full w-9 h-9 sm:w-10 sm:h-10 absolute left-0' />
               <img src={gym9} alt="gym9" className='rounded-full w-9 h-9 sm:w-10 sm:h-10 absolute left-7 sm:left-8' />
-              <img src={gym12} alt="gym12" className='rounded-full w-9 h-9 sm:w-10 sm:h-10 absolute left-14 sm:left-16' />
-              <img src={gym10} alt="gym10" className='rounded-full w-9 h-9 sm:w-10 sm:h-10 absolute left-21 sm:left-24' />
+              <img src={gym10} alt="gym10" className='rounded-full w-9 h-9 sm:w-10 sm:h-10 absolute left-14 sm:left-16' />
             </div>
             <div className='text-xs sm:text-base'>
               Trusted by 3+ million users

@@ -9,7 +9,7 @@ const Scrolling = () => {
             Transformation / Motivation / Progress / Fitness / Workout
           </p>
         </div>
-        <div className="rblinking text-purple-500 opacity-70">
+        <div className="rblinking text-purple-600">
           <p className="py-1 leading-normal">
             Fitness / Workout / Progress / Motivation / Transformation
           </p>
