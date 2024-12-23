@@ -49,7 +49,7 @@ const FAQ = () => {
                 FREQUENTLY ASKED <span className="gradient">QUESTIONS</span>
             </h2>
         </motion.div>
-      <div className="w-5/12 mx-auto mt-8 flex flex-col gap-6">
+      <div className="w-4/5 md:11/12 lg:w-5/12 mx-auto mt-8 flex flex-col gap-6">
         {ques.map((que, i) => (
           <motion.div
           initial={{opacity:0,

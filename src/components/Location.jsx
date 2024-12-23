@@ -32,23 +32,23 @@ const Location = () => {
   return (
     <section id="location" className="w-11/12 mx-auto">
       <motion.div
-            initial={{opacity:0,
-                scale:0
-            }}
-            whileInView={{opacity:1,
-                    scale: 1}}
-            transition={{duration:2}} className="text-center flex flex-col gap-y-5 p-2">
-        <h3 className="text-4xl text-center leading-normal p-2 font-semibold uppercase">
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 2 }}
+        className="text-center flex flex-col gap-y-5 p-2"
+      >
+        <h3 className="text-3xl lg:text-4xl sm:text-4xl leading-normal p-2 font-semibold uppercase">
           Find your <span className="gradient">nearest gym</span>
         </h3>
-        <p className="text-xl">
+        <p className="text-lg lg:text-xl">
           Easily discover gyms near your location to kickstart your fitness journey today!
         </p>
       </motion.div>
-      <div className="flex justify-between items-center w-11/12 mt-10 mx-auto">
+
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-5 w-full sm:w-11/12 mt-10 mx-auto">
         {/* Scrollable Gym List */}
         <div
-          className="overflow-y-scroll h-screen w-2/5 border border-gray-600 rounded-lg p-4"
+          className="overflow-y-scroll h-[30rem] md:h-screen w-full sm:w-2/5 border border-gray-600 rounded-lg p-4"
           style={{ scrollbarWidth: 'thin', scrollbarColor: '#6b7280 #1f2937' }}
         >
           {gyms.map((gym) => (
@@ -59,45 +59,40 @@ const Location = () => {
                 selectedGym?.id === gym.id ? 'bg-purple-800 text-white' : 'bg-gray-900'
               }`}
             >
-              <div className="flex items-center overflow-hidden gap-x-4 group">
-                <div className="w-28 h-36 bg-gray-800 flex justify-center overflow-hidden items-center text-gray-300 transition-transform duration-300 transform group-hover:scale-110">
+              <div className="flex flex-col sm:flex-row items-center gap-x-4 group">
+                <div className="w-full sm:w-28 h-28 sm:h-36 bg-gray-800 flex justify-center items-center text-gray-300 overflow-hidden rounded-lg transition-transform duration-300 transform group-hover:scale-110">
                   {gym.image ? (
                     <img
                       src={gym.image}
                       alt={gym.name}
-                      className="w-28 h-36 object-cover rounded-xl"
+                      className="w-full h-full object-fill rounded-lg"
                     />
                   ) : (
                     <span className="text-sm">No Image</span>
                   )}
                 </div>
-                <div className="flex flex-col gap-3 p-4 text-slate-300">
-                  <h2 className="text-2xl text-white mb-2">{gym.name}</h2>
-                  <p className="flex gap-1 items-center">
-                    <span>
-                      <LuPhoneCall />
-                    </span>
-                    {gym.number}
+                <div className="flex flex-col gap-2 sm:gap-3 p-2 sm:p-4 text-slate-300">
+                  <h2 className="text-base sm:text-xl text-white mb-1 sm:mb-2">{gym.name}</h2>
+                  <p className="flex gap-1 items-center text-sm sm:text-base">
+                    <LuPhoneCall /> {gym.number}
                   </p>
-                  <p className="flex gap-1 items-center">
-                    <span>
-                      <GrLocation />
-                    </span>
-                    {gym.address}
+                  <p className="flex gap-1 items-center text-sm sm:text-base">
+                    <GrLocation /> {gym.address}
                   </p>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
         {/* Map Section */}
-        <div className="border border-slate-800 w-80 h-80 flex items-center justify-center bg-gray-900">
+        <div className="border border-slate-800 w-full p-5 sm:w-80 h-60 sm:h-80 flex items-center justify-center bg-gray-900">
           {selectedGym ? (
             <a
               href={selectedGym.map}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-500 underline text-center"
+              className="text-blue-500  underline text-center"
             >
               Click here to open the map for {selectedGym.name}
             </a>

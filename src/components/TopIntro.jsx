@@ -19,7 +19,7 @@ const TopIntro = () => {
           className="absolute inset-0 z-10 w-11/12 md:w-3/4 lg:px-[7.5rem] flex flex-col justify-center gap-10"
         >
           {/* Trusted by Section */}
-          <div className="px-4 py-[6px] text-sm md:text-lg rounded-full border border-slate-500 shadow-sm shadow-slate-700 max-w-fit flex items-center gap-x-5 md:gap-x-20">
+          <div className="px-4 py-[6px] text-sm md:text-lg rounded-full border border-slate-500 shadow-sm shadow-slate-700 max-w-fit flex flex-col md:flex-row items-center gap-x-5 md:gap-x-4">
             <div className="w-28 h-10 flex relative">
               {/* Overlapping Images */}
               <img
@@ -71,7 +71,7 @@ const TopIntro = () => {
           <img
             src={gym2}
             alt="gym"
-            className="object-cover w-full h-full opacity-70"
+            className="object-fill w-full h-full opacity-70"
           />
         </div>
       </div>
