@@ -47,6 +47,23 @@ body {
     /* Blinking every 1.5 seconds */
 }
 
+@keyframes rblink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.rblinking {
+    animation: rblink 2.5s infinite;
+    /* Blinking every 1.5 seconds */
+}
+
 .centered {
     display: flex;
     justify-content: center;

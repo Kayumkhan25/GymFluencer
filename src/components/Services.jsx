@@ -7,67 +7,60 @@ import gym13 from '../assets/images/gym13.png';
 import { motion } from 'framer-motion';
 
 const Services = () => {
-    
     const imageData = [
-        {
-            label: "TRACK",
-            url: gym5
-        },  {
-            label: "ANALYZE",
-            url: gym3
-        },  {
-            label: "TRAIN",
-            url: gym4
-        },  {
-            label: "CONNECT",
-            url: gym6
-        },  {
-            label: "CHALLENGE",
-            url: gym13
-        }
-    ]
-    
-  return (
-    <section id='services' className='flex flex-col justify-center items-center gap-y-16 '>
-        <div className='flex flex-col gap-8'>
-            <motion.div
-                initial={{opacity:0,
-                    scale:0
-                }}
-                whileInView={{opacity:1,
-                        scale: 1}}
-                transition={{duration:2}} className='text-6xl text-center'>
-                OUR <span className='gradient'>SERVICES</span>
-            </motion.div>
-            <p className='w-3/5 mx-auto text-slate-300 text-xl text-center leading-loose'>
-                GymFluencer offers 5 essential services to help you achieve your fitness goals with ease and flexibility.
-            </p>
-        </div>
-        <div className='grid grid-cols-5 px-1 w-full'>
-            {
-                imageData.map((image, index) => {
-                    return(
-                        <motion.div
-                        initial={{opacity:0,
-                                rotateX:"90deg"
-                        }}
-                        whileInView={{opacity:1,
-                                rotateX: 0}}
-                        transition={{duration:2}} 
-                         key={index} className='relative min-h-[45rem] flex justify-center items-center'>
-                            <div className='absolute top-0 left-0 bg-gradient-to-b from-black via-transparent to-black opacity-70'>
-                                <img src={image.url} alt={image.url} className='h-[44rem] object-cover opacity-80'/>
-                            </div>
-                            <h3 className='text-4xl'>
-                                {image.label}
-                            </h3>
-                        </motion.div>
-                    )
-                })
-            }
-        </div>
-    </section>
-  )
-}
+        { label: 'TRACK', url: gym5 },
+        { label: 'ANALYZE', url: gym3 },
+        { label: 'TRAIN', url: gym4 },
+        { label: 'CONNECT', url: gym6 },
+        { label: 'CHALLENGE', url: gym13 },
+    ];
 
-export default Services
+    return (
+        <section id="services" className="flex flex-col justify-center items-center gap-y-16 py-16">
+            {/* Title Section */}
+            <div className="flex flex-col gap-8 text-center">
+                <motion.div
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 2 }}
+                    className="text-4xl sm:text-6xl font-bold"
+                >
+                    OUR <span className="gradient">SERVICES</span>
+                </motion.div>
+                <p className="w-full sm:w-3/5 mx-auto text-slate-300 text-lg sm:text-xl p leading-loose">
+                    GymFluencer offers 5 essential services to help you achieve your fitness goals with ease and flexibility.
+                </p>
+            </div>
+
+            {/* Services Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 w-full">
+                {imageData.map((image, index) => (
+                    <motion.div
+                        key={index}
+                        initial={{ opacity: 0, rotateX: '90deg' }}
+                        whileInView={{ opacity: 1, rotateX: 0 }}
+                        transition={{ duration: 2 }}
+                        className="relative flex justify-center items-center h-[18rem] sm:h-[22rem] lg:h-[48rem] overflow-hidden rounded-lg shadow-lg"
+                    >
+                        {/* Background Image */}
+                        <div className="absolute inset-0">
+                            <img
+                                src={image.url}
+                                alt={image.label}
+                                className="h-full w-full object-cover opacity-80"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-70"></div>
+                        </div>
+
+                        {/* Label */}
+                        <h3 className="relative text-2xl sm:text-4xl font-bold text-white z-10 tracking-wide">
+                            {image.label}
+                        </h3>
+                    </motion.div>
+                ))}
+            </div>
+        </section>
+    );
+};
+
+export default Services;
